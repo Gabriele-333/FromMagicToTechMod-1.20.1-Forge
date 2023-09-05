@@ -22,6 +22,7 @@ public class fmtt {
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
+
     public fmtt() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         FMTTCreativeTabs.register(modEventBus);
