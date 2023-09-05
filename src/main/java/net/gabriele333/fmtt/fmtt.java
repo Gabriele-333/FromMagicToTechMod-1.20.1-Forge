@@ -1,6 +1,7 @@
 package net.gabriele333.fmtt;
 
 import com.mojang.logging.LogUtils;
+import net.gabriele333.fmtt.item.FMTTItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,6 +26,7 @@ public class fmtt {
 
     public fmtt() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        FMTTItems.register(modEventBus);
         FMTTCreativeTabs.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);

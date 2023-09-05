@@ -16,6 +16,7 @@ public class FMTTCreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(FMTTItems.FMTT_ITEM.get()))
                     .title(Component.translatable("creativetab.fmtt_creative_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(FMTTItems.FMTT_ITEM.get());
                     })
                     .build());
 
