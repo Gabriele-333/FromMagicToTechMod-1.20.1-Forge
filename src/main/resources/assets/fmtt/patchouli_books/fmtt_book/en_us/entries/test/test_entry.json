@@ -1,0 +1,11 @@
+{
+  "name": "Test Entry",
+  "icon": "minecraft:writable_book",
+  "category": "fmtt:test_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "At the moment this book is futile. But in 1.3.0 it will be very usefull. Use '/fmtt book' if you lose me."
+    }
+  ]
+}

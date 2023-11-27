@@ -1,14 +1,18 @@
 package net.gabriele333.fmtt;
 
 import com.mojang.logging.LogUtils;
+import net.gabriele333.fmtt.config.FMTTConfig;
 import net.gabriele333.fmtt.item.FMTTItems;
+import net.gabriele333.fmtt.villager.ModVillagers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -26,11 +30,17 @@ public class fmtt {
 
     public fmtt() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         FMTTItems.register(modEventBus);
         FMTTCreativeTabs.register(modEventBus);
+        ModVillagers.register((modEventBus));
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FMTTConfig.SPEC, "fmtt-common.toml");
 
     }
 
