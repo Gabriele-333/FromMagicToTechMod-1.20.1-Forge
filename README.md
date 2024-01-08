@@ -3,4 +3,4 @@
 Mod for modpack From Magic To Tech
 https://www.curseforge.com/minecraft/modpacks/fmtt
 
-Last modpack version: 1.2.54
+Last modpack version: 1.2.55
